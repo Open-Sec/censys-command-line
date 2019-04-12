@@ -180,9 +180,24 @@ class CensysAPISearch:
         """
 
         default_fields = [
-            'ip',
-            'tags',
-            'ports'
+            'updated_at',
+            'protocols',
+            'metadata.description',
+            'autonomous_system.name',
+
+            '23.telnet.banner',
+
+            '80.http.get.title',
+            '80.http.get.metadata.description',
+            '8080.http.get.metadata.description',
+            '8888.http.get.metadata.description',
+            '443.https.get.metadata.description',
+
+            '443.https.get.title',
+            '443.https.tls.certificate.parsed.subject_dn',
+            '443.https.tls.certificate.parsed.names',
+            '443.https.tls.certificate.parsed.subject.common_name',
+            '443.https.tls.certificate.parsed.extensions.subject_alt_name.dns_names'
         ]
 
         query = kwargs.get('query', '')
