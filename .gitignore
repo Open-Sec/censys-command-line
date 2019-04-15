@@ -3,5 +3,6 @@ build/
 dist/
 
 *.egg-info/
+censys_command_line.egg-info/
 .venv
 
