@@ -9,9 +9,9 @@ setuptools.setup(
     description="Easily query the Censys API from the command line",
     install_requires=['censys'],
     packages=find_packages(),
-    py_modules=['censyscmd'],
+    py_modules=['censys'],
     python_requires='>=2.7',
-    scripts=['censyscmd'],
+    scripts=['censys'],
     classifiers=[
         'Development Status :: 4 - Beta',
         'Programming Language :: Python :: 2.7',

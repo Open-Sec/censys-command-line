@@ -14,7 +14,7 @@ pip install git+https://github.com/censys/censys-command-line
 
 ##### Usage:
 ```bash
-usage: censyscmd [-h] [--fields FIELDS [FIELDS ...]] --query_type
+usage: censys [-h] [--fields FIELDS [FIELDS ...]] --query_type
                               ipv4|certs|websites [--append {true,false}]
                               [--output json|csv|screen]
                               [--start_page START_PAGE]
@@ -48,10 +48,10 @@ optional arguments:
 
 ##### Searching IPv4:
 ```bash
-censyscmd "ip: [ 134.54.0.0 TO 134.54.65.255 ]" --query_type ipv4 --fields ip protocols --output json
+censys "ip: [ 134.54.0.0 TO 134.54.65.255 ]" --query_type ipv4 --fields ip protocols --output json
 ```
 
 ##### Searching Certificates
 ```bash
-censyscmd "parsed.issuer.organization: Let's Encrypt" --query_type=certs
+censys "parsed.issuer.organization: Let's Encrypt" --query_type=certs
 ```
