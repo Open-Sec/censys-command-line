@@ -13,6 +13,8 @@ from censys.websites import CensysWebsites
 
 class CensysAPISearch:
 
+    csv_fields = []
+
     def __init__(self, **kwargs):
         """
         This class searches the Censys API, taking in options from the command line and returning the results to a CSV or
@@ -50,7 +52,7 @@ class CensysAPISearch:
                 if search_results and type(search_results) is list:
 
                     # Get the header row from the first result
-                    fields = search_results[0].keys()
+                    fields = self.csv_fields
                     writer = csv.DictWriter(output_file, fieldnames=fields)
                     writer.writeheader()
 
@@ -135,6 +137,7 @@ class CensysAPISearch:
 
         # This is the hard limit for the number of fields that can be in a query.
         if len(list(field_list)) <= 20:
+            self.csv_fields = list(field_list)
             return list(field_list)
         else:
             raise Exception('Two many fields specified. Please limit the number of fields to 20 or less.')
