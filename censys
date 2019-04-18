@@ -60,6 +60,8 @@ class CensysAPISearch:
                         # Use the Dict writer to process the results and write them into CSV
                         writer.writerow(result)
 
+            print('Wrote results to file {}'.format(filename))
+
             # method returns True, if the file has been written successfully.
             return True
 
@@ -82,6 +84,7 @@ class CensysAPISearch:
                 # Since the results are already in JSON format, just write the results to a file.
                 output_file.write(json.dumps(search_results, indent=4))
 
+            print('Wrote results to file {}'.format(filename))
             return True
 
         except Exception as e:
