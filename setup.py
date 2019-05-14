@@ -5,7 +5,7 @@ from os import path
 
 current_dir = path.abspath(path.dirname(__file__))
 
-with open(path.join(current_dir, 'README.md'), encoding='utf-8') as f:
+with open(path.join(current_dir, 'README.md')) as f:
     long_desc = f.read()
 
 setuptools.setup(
