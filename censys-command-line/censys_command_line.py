@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+from __future__ import absolute_import
 
 import argparse
 import csv
@@ -276,10 +277,9 @@ class CensysAPISearch:
         return self._process_search(query, c, self._combine_fields(default_fields, fields, append))
 
 
-if __name__ == "__main__":
-
+def main():
     """
-    Argparse - Mistakes were made...
+        Argparse - Mistakes were made...
     """
 
     parser = argparse.ArgumentParser(description='Search The Censys Data Set via the command line')
@@ -291,7 +291,6 @@ if __name__ == "__main__":
     parser.add_argument('--query_type',
                         default='ipv4',
                         metavar='ipv4|certs|websites',
-                        required=True,
                         choices=['ipv4', 'certs', 'websites']
                         )
     parser.add_argument('--append',
@@ -352,3 +351,8 @@ if __name__ == "__main__":
 
     if args.query_type == 'websites':
         censys.write_file(censys.search_websites(**censys_args))
+
+
+if __name__ == "__main__":
+
+    main()

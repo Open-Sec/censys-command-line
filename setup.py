@@ -10,7 +10,7 @@ with open(path.join(current_dir, 'README.md')) as f:
 
 setuptools.setup(
     name="censys_command_line",
-    version="1.0.3",
+    version="1.0.4",
     author="Art Sturdevant",
     author_email="support@censys.io",
     description="Command-line tool for Censys! Quickly investigate suspicious hosts or answer complex questions about your infrastructure using Censys right from the command-line! https://www.censys.io",
@@ -18,9 +18,12 @@ setuptools.setup(
     long_description_content_type='text/markdown',
     install_requires=['censys'],
     packages=find_packages(),
-    py_modules=['censys'],
+    py_modules=['censys-command-line'],
     python_requires='>=2.7',
-    scripts=['censys'],
+    scripts=['censys-command-line/censys_command_line.py'],
+    entry_points = {
+        'console_scripts': ['censys=censys_command_line:main'],
+    },
     classifiers=[
         'Development Status :: 4 - Beta',
         'Programming Language :: Python :: 2.7',
